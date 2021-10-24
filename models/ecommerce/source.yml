@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    tables:
+      - name: customers
+        columns: 
+          - name: customer_id
+            tests: ['unique', 'not_null']
+      - name: status
+      - name: order_items
+        columns: 
+          - name: order_item_id
+            tests: ['unique', 'not_null']
+      - name: order_payments
+        columns: 
+          - name: order_id
+            tests: ['unique', 'not_null']
+      - name: order_reviews
+        columns: 
+          - name: review_id
+            tests: ['unique', 'not_null']
+      - name: orders
+        columns: 
+          - name: order_id
+            tests: ['unique', 'not_null']
+      - name: products
+        columns: 
+          - name: product_id
+            tests: ['unique', 'not_null']
+      - name: sellers

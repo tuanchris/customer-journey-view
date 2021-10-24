@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: fashionly
+    tables:
+      - name: distribution_centers
+      - name: inventory_items
+      - name: order_items
+      - name: products
+      - name: users
