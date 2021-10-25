@@ -1,0 +1,9 @@
+customer_journey_view:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: your-project-id
+      threads: 32
+      dataset: ecommerce

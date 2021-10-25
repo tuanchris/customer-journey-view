@@ -16,10 +16,17 @@ clean-targets:
   - "target"
   - "dbt_modules"
 
-seeds:
-  customer_journey_view: 
-
 models:
   customer_journey_view:
-    example:
-      materialized: view
+    marts:
+      core:
+        schema: core_mart
+        materialized: table
+
+    staging:
+      ecommerce:
+        schema: staging
+        materialized: view
+        +persist_docs:
+          relation: true
+          columns: true
