@@ -32,8 +32,8 @@ final as (
         timestamp_diff(first_ordered_timestamp, customer_signedup_date, day) as days_to_first_purchase,
         timestamp_diff(current_timestamp(), last_ordered_timestamp, day) as days_since_last_purchase
 
-    from order_metrics
-    left join users_info using(user_id)
+    from users_info
+    left join order_metrics using(user_id)
     left join product_metrics using(user_id)
     left join event_metrics using(user_id)
 
