@@ -3,11 +3,7 @@ version: 2
 sources:
   - name: ecommerce
     tables:
-      - name: distribution_centers
-        columns:
-          - name: id
-            tests: ['unique', 'not_null']
-      - name: inventory_items
+      - name: orders
         columns:
           - name: id
             tests: ['unique', 'not_null']
@@ -19,7 +15,7 @@ sources:
         columns:
           - name: id
             tests: ['unique', 'not_null']
-      - name: users
+      - name: customers
         columns:
           - name: id
             tests: ['unique', 'not_null']
