@@ -1,25 +1,27 @@
-version: 2
+# Add a source like this if not using dbt seed
 
-sources:
-  - name: ecommerce
-    tables:
-      - name: orders
-        columns:
-          - name: order_id
-            tests: ['unique', 'not_null']
-      - name: order_items
-        columns:
-          - name: order_item_id
-            tests: ['unique', 'not_null']
-      - name: products
-        columns:
-          - name: product_id
-            tests: ['unique', 'not_null']
-      - name: customers
-        columns:
-          - name: customer_id
-            tests: ['unique', 'not_null']
-      - name: events
-        columns:
-          - name: session_id
-            tests: ['unique', 'not_null']
+# version: 2
+
+# sources:
+#   - name: ecommerce
+#     tables:
+#       - name: orders
+#         columns:
+#           - name: order_id
+#             tests: ['unique', 'not_null']
+#       - name: order_items
+#         columns:
+#           - name: order_item_id
+#             tests: ['unique', 'not_null']
+#       - name: products
+#         columns:
+#           - name: product_id
+#             tests: ['unique', 'not_null']
+#       - name: customers
+#         columns:
+#           - name: customer_id
+#             tests: ['unique', 'not_null']
+#       - name: events
+#         columns:
+#           - name: session_id
+#             tests: ['unique', 'not_null']

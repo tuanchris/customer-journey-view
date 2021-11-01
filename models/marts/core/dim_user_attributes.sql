@@ -1,5 +1,5 @@
 with customers_info as (
-    select * from {{ source('ecommerce', 'customers') }}
+    select * from {{ ref('customers') }}
 ),
 
 event_metrics as (

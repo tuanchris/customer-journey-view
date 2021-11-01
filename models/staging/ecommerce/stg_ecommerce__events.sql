@@ -1,5 +1,5 @@
 with events as (
-    select * from {{ source('ecommerce', 'events') }}
+    select * from {{ ref('events') }}
     where customer_id is not null
 ),
 
