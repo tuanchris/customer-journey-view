@@ -1,0 +1,63 @@
+Table customers as C {
+  customer_id int [pk, increment] // auto-increment
+  job string
+  company string
+  ssn string
+  residence string
+  current_location string
+  blood_group string
+  website string
+  username string
+  name string
+  sex string
+  address string 
+  birthdate date
+  created_at datetime
+}
+
+Table orders as O {
+  order_id int [pk]
+  customer_id int
+  status string
+  created_at datetime
+  shipped_at datetime
+  delivered_at datetime
+  returned_at datetime
+ }
+
+Ref: C.customer_id < O.customer_id
+
+Table order_items as OI {
+  order_item_id int [pk]
+  order_id int
+  product_sequence int 
+  product_id int 
+}
+
+Ref: O.order_id < OI.order_id
+
+Table products as P {
+  product_id int [pk]
+  product_name string
+  product_brand string
+  product_price float
+  product_cost float
+  product_category int
+  product_description string
+}
+
+Ref: P.product_id < OI.product_id
+
+Table events as E {
+  session_id int [pk]
+  created_at datetime
+  event_type string
+  customer_id string
+  traffic_source string
+  lattitude float
+  longtitude float
+  ip_address string
+  user_agent string
+}
+
+Ref: C.customer_id < E.customer_id
