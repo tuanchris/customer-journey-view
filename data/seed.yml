@@ -2,23 +2,23 @@
 version: 2
 
 seeds:
-  - name: customers
+  - name: src_hubspot__customers
     columns:
       - name: customer_id
         tests: ['unique', 'not_null']
-  - name: events
+  - name: src_google_analytics__events
     columns:
       - name: session_id
         tests: ['unique', 'not_null']
-  - name: order_items
+  - name: src_shopify__order_items
     columns:
       - name: order_item_id
         tests: ['unique', 'not_null']
-  - name: orders
+  - name: src_shopify__orders
     columns:
       - name: order_id
         tests: ['unique', 'not_null']
-  - name: products
+  - name: src_shopify__products
     columns:
       - name: product_id
         tests: ['unique', 'not_null']

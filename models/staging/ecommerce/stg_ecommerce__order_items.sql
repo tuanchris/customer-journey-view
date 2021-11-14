@@ -1,17 +1,6 @@
-with order_items as (
-    select * from {{ ref('order_items') }}
+with orders as (
+    select * from {{ ref('stg_ecommerce__orders_joined') }}
 ),
-
-products as (
-    select * from {{ ref('products') }}
-),
-
-orders as (
-    select * from {{ ref('orders') }}
-    left join order_items using(order_id)
-    left join products using(product_id)
-),
-
 
 valid_orders as (
     select

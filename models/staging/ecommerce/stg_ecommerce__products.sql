@@ -1,15 +1,5 @@
-with order_items as (
-    select * from {{ ref('order_items') }}
-),
-
-products as (
-    select * from {{ ref('products') }}
-),
-
-orders as (
-    select * from {{ ref('orders') }}
-    left join order_items using(order_id)
-    left join products using(product_id)
+with orders as (
+    select * from {{ ref('stg_ecommerce__orders_joined') }}
     where status not in ('Cancelled', 'Returned')
 ),
 

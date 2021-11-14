@@ -1,5 +1,5 @@
 with customers_info as (
-    select * from {{ ref('customers') }}
+    select * from {{ ref('src_hubspot__customers') }}
 ),
 
 event_metrics as (

@@ -1,5 +1,5 @@
 with events as (
-    select * from {{ ref('events') }}
+    select * from {{ ref('src_google_analytics__events') }}
     where customer_id is not null
 ),
 
